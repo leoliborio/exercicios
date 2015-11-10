@@ -1,0 +1,46 @@
+<h2> Busca de Usuários </h2>
+
+
+<form name='form-lista'>
+
+<div>
+	<label>Selecione o usuário: </label>	
+	<select name='filter' id='filter'>
+		<% @entries.each do |user| %>
+			<option value="<%= user['nome'] %>"><%= user['email'] %></option>
+		<% end %>
+	</select>
+</div>
+
+<input type='submit' value='Buscar' />
+	
+
+</form>
+
+<% if params["filter"] %>
+		<p><%= "Nome: #{params["filter"]}" %> <a href='/usuario/<%= params["filter"] %>'>Ver detalhes</a><p>
+<% end %>
+
+</br>
+
+<h2> Usuários Cadastrados </h2>
+
+<% db = SQLite3::Database.new( "banco.db" ) %>
+<% db.results_as_hash = true %>
+
+<% db.execute( "SELECT * FROM cadastro" ) do |usuario| %>
+
+	<p><%= "Nome: #{usuario["nome"]}" %> <a href='/usuario/<%= usuario["nome"] %>'>Ver detalhes</a><p>
+<% end %>
+
+<a href='/'>Voltar para cadastro</a>
+
+
+
+
+
+
+
+
+
+

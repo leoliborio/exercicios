@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+	<title>Cadastro de Usuários</title>
+	<link rel="stylesheet" type="text/css" href="estilos.css" />
+</head>
+
+<body>
+
+	<div id="form">
+		<h1>Cadastro de Usuários</h1>
+
+		<form name='form-cadastro' action='/result' method='post'>
+
+			<label for='nome'> Nome: </label>
+			<input type='text' name='nome' id='nome' />
+			</br></br></br>
+
+			<label for='email'> Email: </label>
+			<input type='text' name='email' id='email' />
+			</br></br></br>
+
+			<label for='sexo'> Sexo: </label>
+			<input type='radio' name='sexo' id='sexo' value='Masculino' checked/>Masculino
+			<input type='radio' name='sexo' id='sexo' value='Feminino' />Feminino
+			</br></br></br>
+
+			<label for='telefone'> Telefone: </label>
+			<input type='text' name='telefone' id='telefone' />
+			</br></br></br>
+
+			<input type='submit' value='Submeter' />
+
+			</br></br></br>
+
+			<a href='/lista'>Ver resultados</a>
+			
+
+		</form>
+
+	</div>
+
+</body>

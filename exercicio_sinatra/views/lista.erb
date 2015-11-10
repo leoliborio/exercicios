@@ -1,0 +1,22 @@
+<h2> Usuários Cadastrados </h2>
+
+<% for linha in arquivo %>
+	<% pessoa = linha.strip.split(";") %> 
+	<% nome = pessoa[0] %>
+	<% email = pessoa[1] %>
+	<% sexo = pessoa[2] %>
+	<% telefone = pessoa[3] %>
+	
+	<p><%= "Nome:#{nome}, Email:#{email}, Sexo:#{sexo}, Telefone: #{telefone}" %></p>
+
+<% end %>
+
+</br>
+<a href='/'>Voltar para cadastro</a>
+
+
+
+
+
+
+
