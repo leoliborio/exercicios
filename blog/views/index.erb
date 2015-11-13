@@ -1,0 +1,12 @@
+<h1>My Blog</h1>
+
+
+<a href="/post/new">Novo Post</a>
+<a href="/signup">Cadastre-se</a>
+<hr />
+
+<% @entries.each do |post| %>
+	<p>Título do Post: <%= post["title"] %></p>
+	<a href='/post/<%= post["id"] %>'>Ler Post</a>
+<% end %>
+

@@ -1,0 +1,25 @@
+<h1>Crie seu post</h1>
+<form name="form-post" method="post" action="/post/create">
+
+<div>
+<label>Selecione o usuário</label>	
+<select name='user_id'>
+	<% @entries.each do |user| %>
+		<option value="<%= user['id'] %>"><%= user['name'] %></option>
+	<% end %>
+</select>
+</div>
+
+<div>
+<label>Título do Post</label>
+<input name= 'title' id='title' type='text' placeholder='Informe o título' />
+</div>
+
+<div>
+<label>Conteúdo do Post</label>
+<input name= 'content' id='content' type='text' placeholder='Escreva o conteúdo' />
+</div>
+
+<input type='submit' value= 'Publicar' />
+
+</form>
